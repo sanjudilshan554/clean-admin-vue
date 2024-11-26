@@ -43,6 +43,60 @@
           </MainTable>
         </div>
       </div>
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Launch demo modal
+      </button>
+
+      <div class="mt-4 row">
+        <div class="col-lg-2 col-md-2">
+          <div class="nav-wrapper-loc">
+            <ul class="nav nav-pills nav-fill flex-column" id="tabs-icons-text" role="tablist">
+              <li class="mb-2 nav-item">
+                <a
+                  class="nav-link active"
+                  id="basic-data-tab"
+                  data-toggle="tab"
+                  href="#basic-data"
+                  role="tab"
+                  aria-controls="basic-data"
+                  aria-selected="true"
+                >
+                  Product's Data</a
+                >
+              </li>
+              <li class="mb-2 nav-item">
+                <a
+                  class="nav-link"
+                  id="hotel-images-tab"
+                  data-toggle="tab"
+                  href="#hotel-images"
+                  role="tab"
+                  aria-controls="hotel-images"
+                  aria-selected="true"
+                >
+                  Product's Images</a
+                >
+              </li>
+              <li hidden></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-10 col-md-10">
+          <MainTabPanel />
+        </div>
+      </div>
+    </template>
+
+    <template #modals>
+      <ConfirmModal :title="confirmModal.title" :content="confirmModal.content" />
     </template>
   </AdminLayout>
 </template>
@@ -51,6 +105,8 @@
 import AdminLayout from '@/layouts/AdminLayout.vue'
 import DashboardPrimaryCard from '@/components/cards/DashboardPrimaryCard.vue'
 import MainTable from '@/components/table/MainTable.vue'
+import ConfirmModal from '@/components/common/modals/ConfirmModal.vue'
+import MainTabPanel from '@/components/tab-panels/MainTabPanel.vue'
 
 const cards = [
   {
@@ -114,4 +170,24 @@ const tableRows = [
     completion: '30%',
   },
 ]
+
+const confirmModal = {
+  title: 'Confirm Modal',
+  content: 'Are you agree with terms & conditions',
+}
 </script>
+
+<style scoped>
+.breadcrumb-text {
+  color: #6343e9 !important;
+}
+
+.nav-link.active {
+  background-color: #8b78d8 !important;
+  color: #ffffff !important;
+}
+
+.nav-link {
+  color: black;
+}
+</style>

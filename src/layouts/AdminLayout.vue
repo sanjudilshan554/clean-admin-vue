@@ -8,6 +8,8 @@
       <Navbar />
       <div class="container-fluid py-4">
         <slot name="content" />
+
+        <slot name="modals" />
       </div>
     </main>
 
