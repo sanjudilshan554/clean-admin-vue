@@ -1,14 +1,18 @@
 <template>
-  <div class="g-sidenav-show bg-gray-100">
-    <!-- <div class="min-height-100 bg-primary position-absolute w-100"></div> -->
+  <div class="g-sidenav-show bg-gray-100 d-flex flex-column min-vh-100">
+    <!-- Sidebar -->
     <Sidebar />
-    <main class="main-content position-relative border-radius-lg">
+
+    <!-- Main Content -->
+    <main class="main-content position-relative border-radius-lg flex-grow-1">
       <Navbar />
       <div class="container-fluid py-4">
         <slot name="content" />
       </div>
-      <Footer />
     </main>
+
+    <!-- Footer -->
+    <Footer />
   </div>
 </template>
 
@@ -19,5 +23,13 @@ import Sidebar from '@/components/main/Sidebar.vue'
 </script>
 
 <style scoped>
-/* You can add scoped styles here if needed */
+.g-sidenav-show {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+}
 </style>
