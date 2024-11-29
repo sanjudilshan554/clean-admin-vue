@@ -14,7 +14,7 @@
         href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
         target="_blank"
       >
-        <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo" />
+        <!-- <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo" /> -->
         <span class="ms-1 font-weight-bold">Argon</span>
       </a>
     </div>
